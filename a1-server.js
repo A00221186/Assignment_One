@@ -50,5 +50,6 @@ server.listen(server_port, server_ip_address, function(){
     // 4. Add a debug message which ouputs your server ip address and your server port number. Your server ip address 
     // and your server port number values are available in the server_ip_address and server_port program global variables
     
-    console.re.log("HTTP Server listening on: " + server_ip_address + ":" + server_port);
+    console.re.log(server_ip_address);
+    console.re.log(server_port);
 });
