@@ -21,19 +21,22 @@ var sum;
 // We will use a remote console logging service for debug messages
 // Define the service variable and connnect
 // You must edit <<<change_to_your_repo_name>>> to be your repository name
-var consolere = require('console-remote-client').connect('console.re','80','<<<change_to_your_repo_name>>>');
+var consolere = require('console-remote-client').connect('console.re','80','rossoconnor92');
 
 // Function to handle web browser requests and server responses
 function handleRequest(request, response){
     // A small maths problem - Add the augend and the addend to get the sum
     sum = augend * addend;
+    console.re.log(sum = augend + addend);
     // Send user the server response 
     response.end('Assignment One. Expected Sum of 6 + 3 is 9, Actual Sum returned by program is : ' + sum);
     
     // ASSIGNMENT
     // 1. Add a debug message which ouputs the sum of the simple equation above. Values are available in the augend, addend 
     // and sum (global) variables
+    console.re.log("The sum of 6 + 3 is: " + sum);
     // 2. Add a debug message which ouputs the current values of the augend addend and sum variables
+    console.re.log("Augend = " + augend + " Addend = " + addend + " Sum = " + sum);
 }
 
 // Create an instance of a http server
@@ -44,7 +47,10 @@ server.listen(server_port, server_ip_address, function(){
     // This is the callback function which triggered when server is successfully listening (active).
     
     // ASSIGNMENT
+    console.re.log("The server has started"); 
     // 3. Add a debug message which ouputs a message indicating the server is started (listening for user requests).
     // 4. Add a debug message which ouputs your server ip address and your server port number. Your server ip address 
     // and your server port number values are available in the server_ip_address and server_port program global variables
+    
+    console.re.log("Server IP address: " + server_ip_address + " Server Port: " + server_port);
 });
